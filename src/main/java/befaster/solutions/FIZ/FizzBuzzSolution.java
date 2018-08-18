@@ -12,15 +12,15 @@ public class FizzBuzzSolution {
         boolean candeluxe = deluxAble(number);
 
         if (canfizz && canbuzz && candeluxe) {
-            return "fizz buzz deluxe";
+            return "fizz buzz " + deluxeString(number);
         }
 
         if(canfizz && candeluxe) {
-            return "fizz deluxe";
+            return "fizz " + deluxeString(number);
         }
 
         if (canbuzz && candeluxe) {
-            return "buzz deluxe";
+            return "buzz " + deluxeString(number);
         }
 
         if (canfizz && canbuzz) {
@@ -36,10 +36,18 @@ public class FizzBuzzSolution {
         }
 
         if (candeluxe) {
-            return "deluxe";
+            return deluxeString(number);
         }
 
         return number.toString();
+    }
+
+    // Warning number MUST be deluxe
+    private String deluxeString(Integer number) {
+        if (number %2 == 0) {
+            return "deluxe";
+        }
+        return "fake deluxe";
     }
 
     private boolean fizzable(Integer number) {
