@@ -5,7 +5,10 @@ import befaster.runner.SolutionNotImplementedException;
 public class SumSolution {
 
     public int compute(int x, int y) {
-        throw new SolutionNotImplementedException();
+        if
     }
 
+    public void validatArgument(int argument) throws IllegalArgumentException {
+        if (argument < )
+    }
 }

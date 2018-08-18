@@ -2,6 +2,7 @@ package befaster.solutions.SUM;
 
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.fail;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -18,5 +19,16 @@ public class SumSolutionTest {
     @Test
     public void compute_sum() {
         assertThat(sum.compute(1, 1), equalTo(2));
+    }
+
+    @Test
+    public void testInvalidArgument() {
+        // I'd add several tests - this is just an examplar
+        try {
+            sum.compute(101,42);
+            fail("I expected an IllegalArgumentException");
+        } catch (IllegalArgumentException exc) {
+            // This is epected
+        }
     }
 }
