@@ -9,17 +9,18 @@ public class FizzBuzzSolution {
 
         boolean canfizz = fizzable(number);
         boolean canbuzz = buzzable(number);
-        boolean candeluxe = deluxAble(number);
+        boolean canfizzdeluxe = fizzdeluxable(number);
+        boolean canbuzzdeluxe = buzzdeluxable(number);
 
-        if (canfizz && canbuzz && candeluxe) {
+        if (canfizz && canbuzz && (canfizzdeluxe || canbuzzdeluxe)) {
             return "fizz buzz " + deluxeString(number);
         }
 
-        if(canfizz && candeluxe) {
+        if(canfizz && canfizzdeluxe) {
             return "fizz " + deluxeString(number);
         }
 
-        if (canbuzz && candeluxe) {
+        if (canbuzz && canbuzzdeluxe) {
             return "buzz " + deluxeString(number);
         }
 
@@ -33,10 +34,6 @@ public class FizzBuzzSolution {
 
         if (canbuzz) {
             return "buzz";
-        }
-
-        if (candeluxe) {
-            return deluxeString(number);
         }
 
         return number.toString();
@@ -55,7 +52,11 @@ public class FizzBuzzSolution {
             return true;
         }
 
-        if (number.toString().indexOf('3') >= 0) {
+        return false;
+    }
+
+    private boolean fizzdeluxable(Integer number) {
+        if ((number % 3 == 0) &&  (number.toString().indexOf('3') >= 0)) {
             return true;
         }
 
@@ -67,27 +68,15 @@ public class FizzBuzzSolution {
             return true;
         }
 
-        if (number.toString().indexOf('5') >= 0) {
+        return false;
+    }
+
+    private boolean buzzdeluxable(Integer number) {
+        if ((number % 5 == 0) &&  (number.toString().indexOf('5') >= 0)) {
             return true;
         }
 
         return false;
     }
 
-    private boolean deluxAble(Integer number) {
-        if (number < 10) {
-            return false;
-        }
-
-        return allSameLetter(number.toString());
-    }
-
-    private boolean allSameLetter(String number) {
-        for(char c : number.toCharArray()) {
-            if (c != number.charAt(0)) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
