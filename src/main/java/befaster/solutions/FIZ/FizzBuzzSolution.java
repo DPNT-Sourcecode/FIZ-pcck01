@@ -56,7 +56,7 @@ public class FizzBuzzSolution {
     }
 
     private boolean fizzdeluxable(Integer number) {
-        if ((number % 3 == 0) || (number.toString().indexOf('3') >= 0)) {
+        if ((number % 3 == 0) && (number.toString().indexOf('3') >= 0)) {
             return true;
         }
 
@@ -72,7 +72,7 @@ public class FizzBuzzSolution {
     }
 
     private boolean buzzdeluxable(Integer number) {
-        if ((number % 5 == 0) || (number.toString().indexOf('5') >= 0)) {
+        if ((number % 5 == 0) && (number.toString().indexOf('5') >= 0)) {
             return true;
         }
 
