@@ -35,6 +35,10 @@ public class FizzBuzzSolution {
             return "buzz";
         }
 
+        if (candeluxe) {
+            return "deluxe";
+        }
+
         return number.toString();
     }
 
