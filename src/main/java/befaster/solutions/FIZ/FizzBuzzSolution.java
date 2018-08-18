@@ -6,7 +6,20 @@ public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
         // Ordinarily I'd write some tests first
-        
+
+        if ((number % 3 == 0) && (number % 5 == 0)) {
+            return "fizz buzz";
+        }
+
+        if (number % 3 == 0) {
+            return "fizz";
+        }
+
+        if (number % 5 == 0) {
+            return "buzz";
+        }
+
+        return number.toString();
     }
 
 }
