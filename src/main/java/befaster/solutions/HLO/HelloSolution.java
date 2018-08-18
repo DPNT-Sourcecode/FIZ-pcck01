@@ -4,6 +4,7 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class HelloSolution {
     public String hello(String friendName) {
-        return "Hello, World!";
+        // Assuming friend name is capitalized - let's see ...
+        return "Hello, " + friendName + "!";
     }
 }
