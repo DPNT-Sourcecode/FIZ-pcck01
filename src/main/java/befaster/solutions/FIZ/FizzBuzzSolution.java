@@ -5,7 +5,8 @@ import befaster.runner.SolutionNotImplementedException;
 public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
-        throw new SolutionNotImplementedException();
+        // Ordinarily I'd write some tests first
+        
     }
 
 }
